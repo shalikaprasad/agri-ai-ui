@@ -1,0 +1,76 @@
+<h2>Project Statues</h2>
+
+<div class="container my-4">
+
+  <p>
+    <strong>If you want to add project our web site, Please fill this form correctly. Because, It will add to Machine Learning System.
+      So, If you enter wrong details prediction will be wrong.
+      <a href="https:google.com" target="_blank">If you want more details. click here...</a>
+    </strong>
+  </p>
+
+  <hr class="my-4">
+
+  <h4 class="mb-5 h4">Project Details Table</h4>
+
+  <table class="table table-responsive w-auto">
+    <thead>
+    <tr>
+      <th scope="row">#</th>
+      <th>Farmer Name</th>
+      <th>Farming Type</th>
+      <th>Crop Name</th>
+      <th>District</th>
+      <th>Village</th>
+      <th>Land Size</th>
+      <th>Pressure</th>
+      <th>Humidity</th>
+      <th>Rainfall</th>
+      <th>Temperature</th>
+      <th>Soil Status</th>
+      <th>Start Date</th>
+      <th>Update Date</th>
+      <th>Income</th>
+      <th>Expensive</th>
+      <th>Description</th>
+      <th>Fail Reason</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects" style="vertical-align: middle !important;">
+      <td>{{project.id}}</td>
+      <td>{{project.farmer.firstName + " " + project.farmer.lastName}}</td>
+      <td>{{project.farmingType}}</td>
+      <td>{{project.crop.cropName}}</td>
+      <td>{{project.district}}</td>
+      <td>{{project.village}}</td>
+      <td>{{project.landSize}}</td>
+      <td>{{project.pressure}}</td>
+      <td>{{project.humidity}}</td>
+      <td>{{project.rainfall}}</td>
+      <td>{{project.temperature}}</td>
+      <td>{{project.soilStatus}}</td>
+      <td>{{project.startDate}}</td>
+      <td>{{project.updateDate}}</td>
+      <td>{{project.income}}</td>
+      <td>{{project.expensive}}</td>
+      <td>{{project.description}}</td>
+      <td>{{project.reasonFail}}</td>
+      <td>
+        <button type="button" (click)="updateProject(project)" class="btn btn-primary" style="margin-right: 15px">Update</button>
+        <button
+          class="btn btn-danger"
+          mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="deleteProject(project.id, project)"
+          (cancel)="cancelClicked = true">
+          Remove
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

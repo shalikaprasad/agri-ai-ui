@@ -1,0 +1,106 @@
+<h2>Create or Update News</h2>
+
+<div class="container my-4">
+
+  <p>
+    <strong>If you want to add news our web site, Please fill this form correctly. Because, It will add to Machine Learning System.
+      So, If you enter wrong details prediction will be wrong.
+      <a href="https:google.com" target="_blank">If you want more details. click here...</a>
+    </strong>
+  </p>
+
+  <hr class="my-4">
+
+  <h4 class="mb-5 h4">News Creation Form</h4>
+
+  <form [formGroup]="createNewsForm" (ngSubmit)="onSubmitNews()" class="needs-validation" novalidate enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationTopic">Topic</label>
+        <input type="text" class="form-control" id="validationTopic" placeholder="Topic" formControlName="topic">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationCategory">Category</label>
+        <select class="form-control selectpicker" formControlName="category" id="validationCategory" required>
+          <option *ngFor="let news of newsCategoryList" [value]="news">{{news}}</option>
+        </select>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationMonth">Month</label>
+        <input type="text" class="form-control" id="validationMonth" placeholder="Month" formControlName="month">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationDate">Date</label>
+        <input type="text" class="form-control" id="validationDate" placeholder="Date" formControlName="date">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationDescription">Description</label>
+        <textarea matInput style="min-height: 500px" class="form-control" id="validationDescription" placeholder="Description" formControlName="description"></textarea>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationShortDescription">Short Description</label>
+        <textarea matInput style="min-height: 200px" class="form-control" id="validationShortDescription" placeholder="Short Description" formControlName="shortDescription"></textarea>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-12 mb-3">
+        <label for="validationPictureUrl">Picture Url</label><br/>
+        <input type="file" name="image" (change)="fileProgress($event)" id="validationPictureUrl" formControlName="fileData"/>
+
+        <div *ngIf="fileUploadProgress">
+          Upload progress: {{ fileUploadProgress }}
+        </div>
+        <div class="image-preview mb-3" *ngIf="previewUrl">
+          <img [src]="previewUrl" height="300" />
+        </div>
+
+        <div class="mb-3" *ngIf="uploadedFilePath">
+          {{uploadedFilePath}}
+        </div>
+
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" style="padding-top: 10px">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="isActive" formControlName="isActive">
+        <label class="custom-control-label" for="isActive">Is Active News?</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="invalidCheck" formControlName="isAgree">
+        <label class="custom-control-label" for="invalidCheck">Are You agree to add News?</label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit" style="margin-right: 15px">Update News</button>
+    <button class="btn btn-danger" routerLink="/dashboard/news">Cancel Update</button>
+  </form>
+
+
+
+</div>
+

@@ -1,0 +1,152 @@
+<h2>Create Project</h2>
+
+<div class="container my-4">
+
+  <p>
+    <strong>If you want to add project our web site, Please fill this form correctly. Because, It will add to Machine Learning System.
+      So, If you enter wrong details prediction will be wrong.
+      <a href="https:google.com" target="_blank">If you want more details. click here...</a>
+    </strong>
+  </p>
+
+  <hr class="my-4">
+
+  <h4 class="mb-5 h4">Project Creation Form</h4>
+
+  <form [formGroup]="createProjectForm" (ngSubmit)="onSubmitProject()" class="needs-validation" novalidate>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationFarmingType">Farming Type</label>
+        <select class="form-control selectpicker" formControlName="farmingType" id="validationFarmingType" required>
+          <option value="">Select Farming Type</option>
+          <option *ngFor="let category of farmingTypeList" [value]="category">{{category}}</option>
+        </select>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationCropName">Crop Name</label>
+        <select class="form-control selectpicker" formControlName="cropName" id="validationCropName" required>
+          <option value="">Select Crop Name</option>
+          <option *ngFor="let crop of cropNameList" [value]="crop">{{crop}}</option>
+        </select>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationDistrict">District</label>
+        <select class="form-control selectpicker" formControlName="district" id="validationDistrict" (change)="getVillage($event)">
+          <option value="">Select District</option>
+          <option *ngFor="let district of districtList" [value]="district">{{district}}</option>
+        </select>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="village">Village</label>
+        <select class="form-control selectpicker" formControlName="village" id="village">
+          <option value="">Choose Village</option>
+          <option *ngFor="let vig of villageList">{{vig}}</option>
+        </select>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationLandSize">Land Size</label>
+        <input type="number" class="form-control" id="validationLandSize" placeholder="Land Size" formControlName="landSize">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationPressure">Pressure</label>
+        <input type="number" class="form-control" id="validationPressure" placeholder="Pressure" formControlName="pressure">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationHumidity">Humidity</label>
+        <input type="number" class="form-control" id="validationHumidity" placeholder="Humidity" formControlName="humidity">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationRainfall">Rainfall</label>
+        <input type="number" class="form-control" id="validationRainfall" placeholder="Rainfall" formControlName="rainfall">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationTemperature">Temperature</label>
+        <input type="number" class="form-control" id="validationTemperature" placeholder="Temperature" formControlName="temperature">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationSoilStatus">Soil Status</label>
+        <select class="form-control selectpicker" formControlName="soilStatus" id="validationSoilStatus">
+          <option value="">Select Soil Status</option>
+          <option *ngFor="let soil of soilStateList" [value]="soil">{{soil}}</option>
+        </select>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationCropStartDate">Start Date</label>
+        <input type="date" class="form-control" id="validationCropStartDate" name="cropStartDate"
+               [ngModel]="cropStartDate | date:'yyyy-MM-dd'" placeholder="Crop Start Date" formControlName="cropStartDate" required>
+        <div class="invalid-feedback">
+          Please provide a valid state.
+        </div>
+      </div>
+      <div class="col-md-4 mb-6">
+        <label for="validationIncome">Income</label>
+        <input type="number" class="form-control" id="validationIncome" placeholder="Income" formControlName="income">
+      </div>
+      <div class="col-md-4 mb-6">
+        <label for="validationExpensive">Expensive</label>
+        <input type="number" class="form-control" id="validationExpensive" placeholder="Expensive" formControlName="expensive">
+      </div>
+    </div>
+    <div class="form-row" style="padding-top: 10px">
+      <div class="col-md-6 mb-6">
+        <label for="validationDescription">Description</label>
+        <textarea matInput class="form-control" id="validationDescription" placeholder="Description" formControlName="description"></textarea>
+      </div>
+      <div class="col-md-6 mb-6">
+        <label for="validationReasonFail">If Project is fail Add Reason</label>
+        <textarea matInput class="form-control" id="validationReasonFail" placeholder="Reason Fail" formControlName="reasonFail"></textarea>
+      </div>
+    </div>
+    <div class="form-group" style="padding-top: 10px">
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="invalidCheck" formControlName="isFail">
+        <label class="custom-control-label" for="invalidCheck">Project is Failed</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="invalidExpired" formControlName="isExpired">
+        <label class="custom-control-label" for="invalidExpired">Project is Expired</label>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Create Project</button>
+    <button class="btn btn-danger" style="margin-left: 10px" (click)="cancel()">Cancel Update</button>
+  </form>
+
+</div>

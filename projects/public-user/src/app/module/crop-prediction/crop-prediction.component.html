@@ -1,0 +1,96 @@
+<div class="container" style="margin: 35px auto">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_title">
+            <h2>Crop Yield Prediction Calculator</h2>
+          </div>
+          <div class="section_subtitle">
+            Please input following information and click on calculation to get your crop yield predictions.
+          </div>
+          <br /><br />
+        </div>
+      </div>
+      <div class="form-row align-items-center">
+        <div class="col-12">
+          <form [formGroup]="cropPredictionForm" (ngSubmit)="onSubmit()">
+            <div class="row" style="margin-top: 25px">
+              <div class="col-3">
+                <label for="cropSpecially">{{'crop_yield.crop_specially' | translate}} :</label>
+              </div>
+              <div class="col-9">
+                <select class="form-control selectpicker" formControlName="cropSpecially" id="cropSpecially" (change)="getCropsList($event)">
+                  <option value="">Choose Crop Type</option>
+                  <option *ngFor="let type of cropTypeList">{{type}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 25px">
+              <div class="col-3">
+                <label for="cropName" >{{'crop_yield.crop' | translate}} :</label>
+              </div>
+              <div class="col-9">
+                <select class="form-control selectpicker" formControlName="cropName" id="cropName">
+                  <option value="">Choose Crop</option>
+                  <option *ngFor="let fruit of fruitsList">{{fruit}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 25px">
+              <div class="col-3">
+                <label for="district">{{'crop_yield.district' | translate}} :</label>
+              </div>
+              <div class="col-9">
+                <select class="form-control selectpicker" formControlName="districtName" id="district"  (change)="getVillage($event)">
+                  <option value="">Choose District</option>
+                  <option *ngFor="let dis of districtList">{{dis}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 25px">
+              <div class="col-3">
+                <label for="village">{{'crop_yield.village' | translate}} :</label>
+              </div>
+              <div class="col-9">
+                <select class="form-control selectpicker" formControlName="villageName" id="village">
+                  <option value="">Choose Village</option>
+                  <option *ngFor="let vig of villageList">{{vig}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 25px">
+              <div class="col-3">
+                <label for="cropStartDate">{{'crop_yield.start_date' | translate}} :</label>
+              </div>
+              <div class="col-9">
+                <input type="date" class="form-control" id="cropStartDate" name="cropStartDate"
+                       [ngModel]="cropStartDate | date:'yyyy-MM-dd'"  formControlName="cropStartDate">
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 25px;">
+              <div class="col-3">
+                <label for="cropLandSize">{{'crop_yield.size' | translate}} :</label>
+              </div>
+              <div class="col-9">
+                  <input type="number" id="cropLandSize" class="form-control mb-4" formControlName="cropLandSize">
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 25px">
+              <div class="col-12">
+                <input type="submit" value="Calculate" class="btn btn-primary btn-block">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+

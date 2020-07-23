@@ -1,0 +1,57 @@
+<div class="container" style="margin: 35px auto">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_title">
+            <h2>Crop Yield Prediction Calculator</h2>
+          </div>
+          <div class="section_subtitle">
+            Please input following information and click on calculation to get your crop yield predictions.
+          </div>
+          <br /><br />
+        </div>
+      </div>
+      <div class="form-row align-items-center">
+        <div class="col-12">
+          <div class="row" style="margin-top: 50px">
+            <div class="col-7">
+              <h4>Prediction Crop Yield </h4>
+            </div>
+            <div class="col-5">
+              <h3> = {{predictedPrice.cropYeild}} kg</h3>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 25px">
+            <div class="col-7">
+              <h4>Prediction Pricing per unit (per kg) </h4>
+            </div>
+            <div class="col-5">
+              <h3> = {{predictedPrice.pricePerUnit}} LKR</h3>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 25px">
+            <div class="col-7">
+              <h4>Predicted crop value </h4>
+            </div>
+            <div class="col-5">
+              <h3> = {{predictedPrice.price}} LKR</h3>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 25px">
+            <div class="col-12" style="margin-bottom: 15px">
+              <input type="button" value="Go To Back" (click)="goBack()" class="btn btn-primary btn-block">
+            </div>
+            <div class="col-12">
+              <input type="button" value="Give Feedback" (click)="giveFeedback()" class="btn btn-success btn-block">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

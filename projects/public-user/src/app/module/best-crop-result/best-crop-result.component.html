@@ -1,0 +1,55 @@
+<div class="container" style="margin: 35px auto">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_title">
+            <h2>Find The Best Crop For You to Grow</h2>
+          </div>
+          <div class="section_subtitle">
+            You can find out the best crop to grow in order to get maximum income over tome. Please input <br /><br /> following
+            information and click on find button to view results.
+          </div>
+          <br /><br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-8">
+            <div *ngFor="let predictedCrop of predictedCropList">
+              <ul id="crop_card_ul" style="margin-bottom: 20px; color: #EEEEEE; background: #2e3132; display: flex; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.5); padding: 15px;)" >
+                <li style="list-style: none; text-align: center; display: block; padding: 0 25px; border-right: 1px solid rgba(0,0,0,.5)">
+                  <div class="name" data-text="Rise" style="font-size: 25px; font-weight: bold "> {{ predictedCrop.cropName }} </div>
+                </li>
+                <li style="list-style: none; text-align: center; display: block; padding: 0 25px; border-right: 1px solid rgba(0,0,0,.5)">
+                  <div class="name" data-text="Rise"> {{ predictedCrop.cropType }} </div>
+                </li>
+                <li style="list-style: none; text-align: center; display: block; padding: 0 50px; border-right: 1px solid rgba(0,0,0,.5)">
+                  <div class="name" data-text="Rise"> {{ predictedCrop.pricePerAcre }} kg predicted per acer </div>
+                </li>
+                <li style="list-style: none; text-align: center; display: block; padding: 0 50px;">
+                  <div class="name" data-text="Rise"> Predicted price is {{ predictedCrop.pricePerKg }} LKR per kg </div>
+                </li>
+              </ul>
+            </div>
+            <div class="row" style="margin-top: 25px">
+              <div class="col-12" style="margin-bottom: 15px">
+                <input type="button" value="Go To Back" (click)="goBack()" class="btn btn-primary btn-block">
+              </div>
+              <div class="col-12">
+                <input type="button" value="Give Feedback" (click)="giveFeedback()" class="btn btn-success btn-block">
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

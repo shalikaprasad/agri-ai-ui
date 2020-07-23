@@ -1,0 +1,22 @@
+{
+  "section": {
+    "help": "உதவி"
+  },
+  "home": {
+    "prediction_topic": "கணிப்பு சேவைகள்",
+    "prediction_crop_yield": "உங்கள் பயிர் விளைச்சலை கணிக்கவும்",
+    "prediction_best_crop": "வளர சிறந்த பயிர் கண்டுபிடிக்க",
+    "prediction_weather_forecast": "வானிலை முன்னறிவிப்பு",
+    "prediction_crop_yield_des": "இறுதியாக எத்தனை மகசூல் கிடைக்கும் என்பதை நீங்கள் கணிக்க முடியும்",
+    "prediction_best_crop_des": "எந்த பயிர் வளர முடியும் என்பதை நீங்கள் தீர்மானிக்க முடியும் என்பதால் இது சிறந்த கணிப்பு",
+    "prediction_weather_forecast_des": "உங்களுக்கு தேவையான வானிலை முன்னறிவிப்பை நீங்கள் காணலாம்"
+  },
+  "crop_yield": {
+    "crop_specially": "பயிர் சிறப்பாக",
+    "crop": "பயிர்",
+    "district": "மாவட்டம்",
+    "village": "கிராமம்",
+    "start_date": "பயிர் தொடக்க தேதி",
+    "size": "நிலத்தின் அளவு (பெர்ச்)"
+  }
+}

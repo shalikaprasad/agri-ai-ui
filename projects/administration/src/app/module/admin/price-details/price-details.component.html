@@ -1,0 +1,51 @@
+<h2>Pricing with Crops</h2>
+
+<div class="container my-4">
+
+  <p>
+    <strong>If you want to add crop our web site, Please fill this form correctly. Because, It will add to Machine Learning System.
+      So, If you enter wrong details prediction will be wrong.
+      <a href="https:google.com" target="_blank">If you want more details. click here...</a>
+    </strong>
+  </p>
+
+  <hr class="my-4">
+
+  <h4 class="mb-5 h4">Crop Price Details Table</h4>
+
+  <button type="button" [routerLink]="['/dashboard/update-price']" class="btn btn-primary" style="margin-bottom: 15px">Create new Crop Price</button>
+  <table class="table table-striped w-auto">
+    <thead>
+    <tr>
+      <th scope="row">#</th>
+      <th>Crop Name</th>
+      <th>Crop Type</th>
+      <th>Crop Price</th>
+      <th>District</th>
+      <th style="text-align: center">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let crop of crops" style="vertical-align: middle !important;">
+      <td>{{crop.id}}</td>
+      <td>{{crop.cropName}}</td>
+      <td>{{crop.cropType}}</td>
+      <td>{{crop.cropPrice}}</td>
+      <td>{{crop.district}}</td>
+      <td>
+        <button type="button" (click)="updateCrop(crop)" class="btn btn-primary" style="margin-right: 15px">Update</button>
+        <button
+          class="btn btn-danger"
+          mwlConfirmationPopover
+          [popoverTitle]="popoverTitle"
+          [popoverMessage]="popoverMessage"
+          placement="left"
+          (confirm)="deleteFarmer(crop.id, crop)"
+          (cancel)="cancelClicked = true">
+          Remove
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+<app-header (toggleSideBarForMe)="sideBarToggle($event)"></app-header>
+
+<mat-drawer-container>
+
+  <mat-drawer [mode]="screenWidth > 840 ? 'side' : 'over'" [opened] = "sideBarOpen">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <app-section></app-section>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+</mat-drawer-container>
+
+<app-footer></app-footer>
+

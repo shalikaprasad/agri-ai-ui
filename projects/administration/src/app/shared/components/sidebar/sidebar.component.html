@@ -1,0 +1,26 @@
+<mat-nav-list class="side">
+  <div class="profile-card">
+    <div class="header">
+      <h3>{{currentUser.branchName}}</h3>
+
+      <img src="{{imagePath}}" alt="User" style="padding: 10px; width: 150px; height: 150px">
+
+      <h6>
+        <p>{{currentUser.userName}}</p>
+        <address>
+          {{currentUser.address}}
+        </address>
+      </h6>
+      <h6>දුරකථන අංක : <i class="fa fa-phone"></i> <strong>{{currentUser.phoneNumber}}</strong></h6>
+      <h6>{{currentUser.email}}</h6>
+    </div>
+
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/home">Dashboard</a>
+  <a mat-list-item routerLinkActive="list-item-active" [class.disabled]="lock" routerLink="/dashboard/news" >News <i class="fa fa-lock" style="padding-left: 5px" aria-hidden="true" [hidden]="!lock"></i></a>
+
+  <mat-divider></mat-divider>
+</mat-nav-list>

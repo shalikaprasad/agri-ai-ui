@@ -1,0 +1,26 @@
+mdb-card{
+  padding: 5px;
+  vert-align: middle;
+}
+
+.card-myStyle {
+  height: 250px;
+  background-color: #3A3A3A;
+  box-shadow: none !important;
+  transition: .4s;
+}
+
+.card-myStyle mdb-card-title {
+  text-align: center;
+  color: white;
+}
+
+.card-myStyle:hover {
+  transition: .4s;
+  background-color: rgba(3, 169, 244, 0.7) ;
+}
+
+.card-myStyle mdb-card-img {
+  max-width: 120px;
+  min-height: 120px;
+}

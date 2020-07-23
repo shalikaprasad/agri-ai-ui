@@ -1,0 +1,64 @@
+<div class="container" style="margin: 35px auto">
+  <div class="row">
+    <div class="col-lg-2">
+    </div>
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_title">
+            <h2>Weather Result</h2>
+          </div>
+          <div class="section_subtitle">
+            Optimized weather result Generated. Please refer the list given and make tour choice.
+          </div>
+          <br /><br />
+        </div>
+      </div>
+        <div class="form-row align-items-center">
+            <div class="col-12">
+                <form [formGroup]="weatherPredictionForm" (ngSubmit)="onSubmit()">
+                  <div class="row" style="margin-top: 50px">
+                    <select class="form-control selectpicker" formControlName="districtName" id="districtName" (change)="getVillage($event)">
+                      <option value="">colombo</option>
+                      <option *ngFor="let district of districtList">{{district}}</option>
+                    </select>
+                  </div>
+                  <div class="row" style="margin-top: 50px">
+                    <select class="form-control selectpicker" formControlName="villageName" id="villageName" >
+                      <option value="">colombo</option>
+                      <option *ngFor="let village of villageList">{{village}}</option>
+                    </select>
+                  </div>
+                  <div class="row" style="margin-top: 25px">
+                    <div class="col-12">
+                      <input type="submit" value="Calculate" class="btn btn-primary btn-block">
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12" style="margin-top: 25px">
+          <div class="col mb-6">
+              <ul id="crop_card_ul" style="margin-bottom: 20px" >
+                <li style="list-style: none; text-align: center; display: block; padding: 0 25px; border-right: 1px solid rgba(0,0,0,.5)">
+                  <div class="name" data-text="Rise" style="font-size: 25px; font-weight: bold"> {{weatherObj.city}} </div>
+                </li>
+                <li style="list-style: none; text-align: center; display: block; padding: 0 25px; border-right: 1px solid rgba(0,0,0,.5)">
+                  <div class="name" data-text="Rise"> Temperature <br>Hi: {{weatherObj.tempMax}} &nbsp; Lo: {{weatherObj.tempMin}}</div>
+                </li>
+                <li style="list-style: none; text-align: center; display: block; padding: 0 20px; border-right: 1px solid rgba(0,0,0,.5)">
+                  <div class="name" data-text="Rise"> Rainfall prediction  <p style="font-size: 10px; margin: 0">Today: {{weatherObj.precipitation}}mm Month: {{weatherObj.precipitation}}mm<p> </div>
+                </li>
+                <li style="list-style: none; text-align: center; display: block; padding: 0 40px;">
+                  <div class="name" data-text="Rise">Last year this month Rainfall  <p style="font-size: 10px; margin: 0">This day: {{weatherObj.precipitation}}mm This month: {{weatherObj.precipitation}}mm<p></div>
+                </li>
+              </ul>
+
+          </div>
+       </div>
+    </div>
+    <div class="col-lg-2">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "section": {
+    "help": "උදව්"
+  },
+  "home": {
+    "prediction_topic": "පුරෝකථන සේවා",
+    "prediction_crop_yield": "ඔබේ බෝග අස්වැන්න පුරෝකථනය කරන්න",
+    "prediction_best_crop": "වැඩීමට හොඳම බෝගය සොයා ගන්න",
+    "prediction_weather_forecast": "කාලගුණ අනාවැකිය",
+    "prediction_crop_yield_des": "අවසාන වශයෙන් කොපමණ අස්වැන්නක් ලැබේදැයි ඔබට පුරෝකථනය කළ හැකිය",
+    "prediction_best_crop_des": "කුමන බෝගයක් වගා කළ හැකිද යන්න ඔබට තීරණය කළ හැකි බැවින් මෙය හොඳම පුරෝකථනයකි",
+    "prediction_weather_forecast_des": "ඔබට අවශ්ය පරිදි කාලගුණ අනාවැකි සොයාගත හැකිය"
+  },
+  "crop_yield": {
+    "crop_specially": "බෝග විශේෂය",
+    "crop": "බෝග",
+    "district": "දිසා",
+    "village": "ගම",
+    "start_date": "බෝගය ආරම්භ කළ දිනය",
+    "size": "ඉඩම් ප්රමාණය (පර්චසය)"
+  }
+}

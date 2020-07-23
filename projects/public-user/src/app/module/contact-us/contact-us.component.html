@@ -1,0 +1,80 @@
+<div class="container" style="margin-top: 70px; margin-bottom: 70px">
+  <div class="row">
+
+    <!-- Get in touch -->
+    <div class="col-lg-6">
+      <div class="container">
+        <div class="contact_content" style="padding: 48px">
+          <div class="h4 mb-4" style="text-align: center; font-weight: bold; font-size: 25px;">Get in touch with us</div>
+          <div class="contact_text" style="text-align: center">
+            <p>
+              Minisrty of Agriculture, Rural Economic Affairs, Livestock Development,
+              Irrigation and Fisheries and Aquatic Resources Development
+            </p>
+          </div>
+          <div class="contact_list" style="margin-top: 50px">
+            <ul>
+              <li>
+                <div>address:</div>
+                <div>288, Sri Jayawardenepura Mawatha,Rajagiriya.</div>
+              </li>
+              <li>
+                <div>phone:</div>
+                <div>2869553, 2872093, 2872097</div>
+              </li>
+              <li>
+                <div>email:</div>
+                <div>secretary@agrimin.gov.lk</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <!-- Default form contact -->
+      <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+        <p class="h4 mb-4">Contact us</p>
+
+        <!-- Name -->
+        <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+               class="form-control mb-4" placeholder="Name">
+
+        <!-- Email -->
+        <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+               class="form-control mb-4" placeholder="E-mail">
+
+        <!-- Subject -->
+        <label>Subject</label>
+        <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Feedback</option>
+          <option value="2">Report a bug</option>
+          <option value="3">Feature request</option>
+          <option value="4">Feature request</option>
+        </select>
+
+        <!-- Message -->
+        <div class="form-group">
+            <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+                      rows="3" placeholder="Message"></textarea>
+        </div>
+
+        <!-- Copy -->
+        <div class="custom-control custom-checkbox mb-4">
+          <input formControlName="contactFormCopy" type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+          <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
+        </div>
+
+        <!-- Send button -->
+        <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+                mdbWavesEffect type="submit">Send</button>
+
+      </form>
+      <!-- Default form contact -->
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "section": {
+    "help": "Help"
+  },
+  "home": {
+    "prediction_topic": "Prediction Services",
+    "prediction_crop_yield": "Predict Your Crop Yield",
+    "prediction_best_crop": "Find Best Crop to Grow",
+    "prediction_weather_forecast": "Weather Forecast",
+    "prediction_crop_yield_des": "You can predict how many yield getting finally",
+    "prediction_best_crop_des": "This is best prediction, as you can decide which crop that can grow",
+    "prediction_weather_forecast_des": "You can find weather forecast as you need"
+  },
+  "crop_yield": {
+    "crop_specially": "Crop Specially",
+    "crop": "Crop",
+    "district": "District",
+    "village": "Village",
+    "start_date": "Date of Crop start",
+    "size": "Size of Land(perch)"
+  }
+}
