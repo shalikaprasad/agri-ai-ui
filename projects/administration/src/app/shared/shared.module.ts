@@ -9,6 +9,7 @@ import { SidebarComponent } from 'projects/administration/src/app/shared/compone
 import { DialogBoxComponent } from './widgets/dialog-box/dialog-box.component';
 import { AreaComponent } from './widgets/area/area.component';
 import { PieComponent } from './widgets/pie/pie.component';
+import {FlexModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -21,11 +22,12 @@ import { PieComponent } from './widgets/pie/pie.component';
     AreaComponent,
     PieComponent
   ],
-  imports: [
-    CommonModule,
-    VendorsModule,
-    RouterModule
-  ],
+    imports: [
+        CommonModule,
+        VendorsModule,
+        RouterModule,
+        FlexModule
+    ],
   exports: [
     HeaderComponent,
     FooterComponent,

@@ -7,13 +7,13 @@ import {UserService} from 'projects/tools/src/lib/user.service';
 import {AlertService} from 'projects/tools/src/lib/alert.service';
 import {Message} from 'projects/administration/src/app/shared/models/Message';
 import {SocketService} from 'projects/tools/src/lib/socket.service';
-import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import {environment} from 'projects/administration/src/environments/environment';
 import {ToastrService} from 'ngx-toastr';
 import {AuthenticationService} from 'projects/tools/src/lib/authentication.service';
 import {DatePipe} from '@angular/common';
 import {first} from 'rxjs/operators';
+import {Stomp} from "@stomp/stompjs";
 
 @Component({
   selector: 'app-group-chatting',

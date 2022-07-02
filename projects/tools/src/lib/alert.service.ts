@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {NavigationStart, Router} from '@angular/router';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +58,6 @@ export class AlertService {
 
   clear() {
     // clear by calling subject.next() without parameters
-    this.subject.next();
+    this.subject.unsubscribe();
   }
 }

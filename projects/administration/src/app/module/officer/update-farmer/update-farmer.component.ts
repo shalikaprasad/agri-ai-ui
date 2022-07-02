@@ -7,9 +7,9 @@ import {ProjectService} from 'projects/tools/src/lib/project.service';
 import {AlertService} from 'projects/tools/src/lib/alert.service';
 import {UserService} from 'projects/tools/src/lib/user.service';
 import {first} from 'rxjs/operators';
-import {MatDialog} from '@angular/material';
 import {DialogBoxComponent} from 'projects/administration/src/app/shared/widgets/dialog-box/dialog-box.component';
 import {OtherService} from 'projects/tools/src/lib/other.service';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-update-farmer',

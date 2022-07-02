@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {DashboardService} from 'projects/tools/src/lib/dashboard.service';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
-import {ProjectService} from 'projects/tools/src/lib/project.service';
+import {MatTableDataSource} from "@angular/material/table";
+import {MatPaginator} from "@angular/material/paginator";
 
 export class PeriodicElement {
   orders: number;

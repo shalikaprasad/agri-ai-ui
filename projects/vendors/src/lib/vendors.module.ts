@@ -1,13 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import { VendorsComponent } from './vendors.component';
-import {
-  MatButtonModule,
-  MatDialogModule, MatDividerModule,
-  MatIconModule,
-  MatListModule, MatPaginatorModule,
-  MatSelectModule,
-  MatSidenavModule, MatSnackBarModule, MatTableModule
-} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
@@ -17,6 +9,16 @@ import {OAuthModule} from 'angular-oauth2-oidc';
 import {TreeViewModule} from '@syncfusion/ej2-angular-navigations';
 import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import {HighchartsChartModule} from 'highcharts-angular';
+import {MatButtonModule} from "@angular/material/button";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatSelectModule} from "@angular/material/select";
+import {MatListModule} from "@angular/material/list";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {

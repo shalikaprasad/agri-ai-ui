@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import {environment} from 'projects/administration/src/environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Message} from 'projects/administration/src/app/shared/models/Message';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 import {AuthenticationService} from 'projects/tools/src/lib/authentication.service';
+import {Observable} from "rxjs";
+import {map} from "rxjs-compat/operator/map";
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +17,7 @@ export class SocketService {
   ) { }
 
   post(data: Message) {
-    return this.http.post(this.url, data)
-      .map((data: Message) => { return data; })
-      .catch(error => {
-        return new ErrorObservable(error);
-      })
-      ;
+    return this.http.post(this.url, data);
   }
 
   getAllMessagesForUser(message) {
